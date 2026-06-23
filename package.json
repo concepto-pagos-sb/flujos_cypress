@@ -1,0 +1,21 @@
+{
+  "name": "cypress-tuto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "cypress": "^14.5.4",
+    "cypress-file-upload": "^5.0.8",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "cypress-plugin-api": "^2.11.2",
+    "prompt-sync": "^4.2.0"
+  }
+}

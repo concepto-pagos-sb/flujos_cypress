@@ -86,7 +86,9 @@ describe('Alta de comercio', ()=> {
         cy.contains('0000000 ').click({force:true});
         cy.wait(1000);
         cy.get('input[type="checkbox"]').eq(0).check({force: true });
-        cy.get('input[formcontrolname="payment_link_amount_max_day"]').click({force:true}).type('100000',{delay:100});
+        cy.get('input[formcontrolname="payment_link_amount_max_day"]').click({force:true}).type('10000',{delay:100});
+        cy.get('input[type="checkbox"]').eq(0).check({force: true });
+        cy.get('input[formcontrolname="payment_link_amount_max_day"]').click({force:true}).type('10009',{delay:100});
         cy.get('input[type="checkbox"]').eq(1).check({force: true });
         cy.get('input[formcontrolname="payment_link_amount_max_month"]').click({force:true}).type('200000',{delay:100});
 
@@ -117,7 +119,8 @@ describe('Alta de comercio', ()=> {
         cy.get('input[formcontrolname="paymentL_business_comission_international"]').click({force:true}).type('3',{delay:100});
         
         
-        cy.scrollTo('bottom');        
+        cy.scrollTo('bottom');   
+        cy.pause();     
         //prueba dobles clic//
         cy.contains('Guardar').click({force:true});
         /*let j=0;
