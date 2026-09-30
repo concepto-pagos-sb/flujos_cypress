@@ -12,7 +12,7 @@ describe('Automatizacion 3Ds', () => {
      function pago(numero_tarjeta,correo)
         {
 
-        cy.visit('https://pago-qa.conceptopagos.com/9d0e1ab546c7531151dde08e15635d3c8d72cef2422d0d2b6eae50fc5d71ff31eb191deabfe5eddae4a452379a942f83dad32cfc5a158faff4e763cccba63298');
+        cy.visit('https://pago-qa.conceptopagos.com/e535721f506ec86f0a5453be2505fd4539c8a9435cda2a7b66a782ad5dc18f3d369704d52fe9a19663b6a8a747fc7bdaf201fcd44a6fc224002cc376ef47fbb5');
         cy.get('body').should('be.visible');
         cy.get('input[maskedinput]').click({force:true}).type(numero_tarjeta,{delay:100});
         cy.get('input[mask="00/00"]').click().type('12/27',{delay:100});

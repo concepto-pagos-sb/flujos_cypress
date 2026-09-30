@@ -18,6 +18,8 @@ describe('Alta de comercio', ()=> {
 
         cy.visit('https://gestor-qa.conceptopagos.com/dashboard');
         cy.get('body').click(23.99,23.99);
+        cy.wait(2000);
+        cy.contains('mat-icon', 'shops').click({force:true});
         cy.contains('Administracion de comercios').click({force:true});
         cy.contains('button','Alta de Comercio').click({force:true});
         cy.wait(3000);
@@ -44,7 +46,7 @@ describe('Alta de comercio', ()=> {
         cy.get('mat-option').contains('Tiendas, autoservicio y minisuper').click({force:true});
         cy.wait(2000);
         cy.get('mat-select[formcontrolname="business_activity_id"]').click({force:true});
-        cy.contains('Farmacia').click({force:true});
+        cy.contains('Tiendas de descuento').click({force:true});
 
         cy.get('input[formcontrolname="user_name"]').click({force:true}).type(nombre,{delay:100});
         cy.get('input[formcontrolname="first_last_name"]').click({force:true}).type(apellido1,{delay:100});
@@ -69,10 +71,12 @@ describe('Alta de comercio', ()=> {
         cy.get('input[formcontrolname="billing_email"]').click({force:true}).type(correo,{delay:100});
         cy.get('mat-select[formcontrolname="mcc"]').click({force:true});
         cy.contains('AUTOSERVICIOS').click({force:true});
+        cy.wait(1000);
         cy.get('mat-select[formcontrolname="acquiring_bank_id"]').click({force:true});
-        cy.contains('Banregio').click({force:true});
+        cy.contains('span', 'Banregio').click({force:true});
+        cy.wait(4000);
         cy.get('mat-select[formcontrolname="affilation_type"]').click({force:true});
-        cy.contains('Esquema 4').click({force:true});
+        cy.contains(' Esquema 4 - Afiliacion unica por agregador ').click({force:true});
         cy.wait(1000);
         cy.get('mat-select[formcontrolname="transactional_profile_id"]').click({force:true});
         cy.wait(1000);
@@ -87,10 +91,9 @@ describe('Alta de comercio', ()=> {
         cy.wait(1000);
         cy.get('input[type="checkbox"]').eq(0).check({force: true });
         cy.get('input[formcontrolname="payment_link_amount_max_day"]').click({force:true}).type('10000',{delay:100});
-        cy.get('input[type="checkbox"]').eq(0).check({force: true });
-        cy.get('input[formcontrolname="payment_link_amount_max_day"]').click({force:true}).type('10009',{delay:100});
         cy.get('input[type="checkbox"]').eq(1).check({force: true });
         cy.get('input[formcontrolname="payment_link_amount_max_month"]').click({force:true}).type('200000',{delay:100});
+        cy.get('mat-checkbox[formcontrolname="paymentL_checkbox"]').click();
 
         cy.get('mat-select[formcontrolname="pl_affilation_type"]').click({force:true});
         cy.contains(' Esquema 4 - Afiliacion unica por agregador ').click({force:true});
@@ -104,7 +107,7 @@ describe('Alta de comercio', ()=> {
         //cy.contains('63634 - Comercios generales').click({force:true});
         cy.get('input[formcontrolname="paymentL_id_channel"]').click({force:true}).type('8T4DVDXJ',{delay:1000});
         cy.get('input[formcontrolname="payment_link_amount_min"]').click({force:true}).type('5',{delay:100});
-        cy.get('input[formcontrolname="payment_link_amount_max"]').click({force:true}).type('10000',{delay:100});
+        cy.get('input[formcontrolname="payment_link_amount_max"]').click({force:true}).type('9999',{delay:100});
         
         cy.get('input[formcontrolname="paymentL_bank_rate_credit"]').click({force:true}).type('3',{delay:100});
         cy.get('input[formcontrolname="paymentL_bank_rate_debit"]').click({force:true}).type('3',{delay:100});
@@ -118,9 +121,8 @@ describe('Alta de comercio', ()=> {
         cy.get('input[formcontrolname="paymentL_business_comission_debit"]').click({force:true}).type('3',{delay:100});
         cy.get('input[formcontrolname="paymentL_business_comission_international"]').click({force:true}).type('3',{delay:100});
         
-        
-        cy.scrollTo('bottom');   
-        cy.pause();     
+        cy.pause();
+        cy.scrollTo('bottom');     
         //prueba dobles clic//
         cy.contains('Guardar').click({force:true});
         /*let j=0;
@@ -128,7 +130,7 @@ describe('Alta de comercio', ()=> {
         {
         cy.contains('Guardar').click({force:true});
             j++;
-        }*/
+        }
 
         cy.wait(5000);
         cy.contains('mat-icon','edit').click({force:true});
@@ -137,7 +139,7 @@ describe('Alta de comercio', ()=> {
         cy.wait(5000);
         cy.contains('DEFAULT_PROFILE').click({force:true});
         cy.scrollTo('bottom');
-        cy.contains('Guardar').click();
+        cy.contains('Guardar').click();*/
         /*
         //Buscar por  comercio
         cy.get('input[formcontrolname="search"]').click({force:true}).type('Tiendas Don panchito',{delay:100});
