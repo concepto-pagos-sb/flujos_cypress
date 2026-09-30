@@ -8,7 +8,7 @@ describe('Automatizacion 3Ds', () => {
         const numero_tarjeta=4000000000002701;
         
 
-
+//hola
      function pago(numero_tarjeta,correo)
         {
 
